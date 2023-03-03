@@ -28,7 +28,7 @@ pipeline {
     steps {
         input "Efetuar o deploy para ${env.BRANCH_NAME}? (Requer Aprovação)"
         script {
-            sh "kubectl rollout restart deployment.apps/deploy-portalapp -n ${env.namespace}"
+            sh "kubectl rollout restart deployment/deploy-portalapp -n ${env.namespace}"
         }
     }
 }

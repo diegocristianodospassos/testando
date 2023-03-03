@@ -15,7 +15,7 @@ pipeline {
           steps {
             script{                               
                     dir("node-project") {
-                        dockerImage = docker.build "10.100.4.81:5000/portalapp:${env.namespace}"
+                        dockerImage = docker.build "localhost:32000/portalapp:${env.namespace}"
                             dockerImage.push()                                                      
                     }
                 }

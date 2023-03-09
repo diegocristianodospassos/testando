@@ -4,8 +4,8 @@ const redis = require('redis');
 
 const app = express();
 const client = redis.createClient({
-  host: '10.102.113.150',
-  port: 30001
+  host: 'redis',
+  port: 6379
 });
 
 app.use(bodyParser.urlencoded({ extended: true }));

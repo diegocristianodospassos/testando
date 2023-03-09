@@ -11,7 +11,7 @@ pipeline {
     
         
         stage('Build') {
-          when { anyOf { branch 'desenvolvimento'; branch 'hom'; branch "prd"; } }
+          when { anyOf { branch 'desenvolvimento'; branch 'hom'; branch "prod"; } }
           steps {
             script{                               
                     dir("node-project") {
@@ -24,7 +24,7 @@ pipeline {
             
        
         stage('Deploy') {
-    when { anyOf { branch 'desenvolvimento'; branch 'hom'; branch "prd";; } } 
+    when { anyOf { branch 'desenvolvimento'; branch 'hom'; branch "prod";; } } 
     steps {
         input "Efetuar o deploy para ${env.BRANCH_NAME}? (Requer Aprovação)"
         script {
